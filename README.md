@@ -1,7 +1,7 @@
 # README
 
 [![npm version](https://badge.fury.io/js/barhandles.svg)](http://badge.fury.io/js/barhandles)
-[![Build Status](https://travis-ci.org/wspringer/barhandles.svg?branch=master)](https://travis-ci.org/wspringer/barhandles)
+[![Build Status](https://travis-ci.org/bborn/barhandles.svg?branch=master)](https://travis-ci.org/bborn/barhandles)
 
 Extract variable references from Handlebars templates.
 
