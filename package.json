@@ -1,5 +1,5 @@
 {
-    "name": "barhandles",
+    "name": "barhandles-ts",
     "version": "0.6.1",
     "description": "Extract references from Handlebars templates",
     "main": "dist/index.js",
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/bborn/barhandles/"
+        "url": "git+https://github.com/bborn/barhandles.git"
     },
     "scripts": {
         "build": "tsc -p .",
@@ -34,6 +34,7 @@
         "handlebars"
     ],
     "author": "Wilfred Springer",
+    "contributors": ["Bruno Bornsztein"],
     "license": "ISC",
     "devDependencies": {
         "@types/jest": "^29.5.12",
