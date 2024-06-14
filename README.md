@@ -3,12 +3,12 @@
 [![npm version](https://badge.fury.io/js/barhandles.svg)](http://badge.fury.io/js/barhandles)
 [![Build Status](https://travis-ci.org/wspringer/barhandles.svg?branch=master)](https://travis-ci.org/wspringer/barhandles)
 
-A proof of concept to check how hard it would be to extract variable references from Handlebars templates.
+Extract variable references from Handlebars templates.
 
 ### One Minute Overview
 
 ```javascript
-barhandles = require('barhandles');
+import barhandles from 'barhandles';
 
 barhandles.extract('{{foo.bar}}', callback);
 // Callback will be invoked with ['foo', 'bar'], false
@@ -51,6 +51,7 @@ will produce:
 
 ### Change log
 
+* `v0.7.0`: Add support for subexpressions, migrate to Typescript
 * `v0.4.3`: Bug fixes
 * `v0.4.1`: Add support for adding behaviour of other directives
 * `v0.4.0`: Support for `{{#if}}` and optionals.
