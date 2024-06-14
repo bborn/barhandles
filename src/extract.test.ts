@@ -129,4 +129,12 @@ describe("extract", () =>  {
         expect(schema).toHaveProperty("foo");
         expect(schema.foo).toHaveProperty("_type", "any");
     });
+
+    it("should handle subexpressions", function () {
+        const template = `\
+{{#if (isdefined value1)}}true{{else}}false{{/if}}
+`;
+        const schema = extractSchema(template);
+        expect(schema).toHaveProperty("value1");
+    });
 });

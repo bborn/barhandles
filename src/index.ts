@@ -88,6 +88,11 @@ const extract = (template: string, callback: Function, opts: HelperDetails = {})
                 emit(extend(path, node), optional);
                 break;
 
+            case "SubExpression":
+                node.params.forEach((child: any) =>
+                    visit(emit, path, child, optional || (helper != null ? helper.optional : undefined))
+                );
+                break;
             case "MustacheStatement":
                 helper = helperDetails[node.path.original];
                 if (node.params.length === 0) {
