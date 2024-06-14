@@ -1,7 +1,7 @@
-const { extract, extractSchema } = require("./index");
+import { extract, extractSchema } from "./index";
 
 describe("extract", () =>  {
-    let emit = null;
+    let emit: jest.Mock;
 
     beforeEach(() => (emit = jest.fn()));
 
@@ -16,12 +16,7 @@ describe("extract", () =>  {
     });
 
     it("should support 'each' without getting hung up on @index", function () {
-        extract(
-            `\
-{{#each foo}}{{@index}}{{/each}}\
-`,
-            emit
-        );
+        extract("{{#each foo}}{{@index}}{{/each}}", emit);
         expect(emit).not.toHaveBeenCalledWith(["foo", "#", "index"], false);
     });
 
