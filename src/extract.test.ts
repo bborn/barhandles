@@ -1,6 +1,6 @@
 import { extract, extractSchema } from "./index";
 
-describe("extract", () =>  {
+describe("extract", () => {
     let emit: jest.Mock;
 
     beforeEach(() => (emit = jest.fn()));
@@ -136,5 +136,14 @@ describe("extract", () =>  {
 `;
         const schema = extractSchema(template);
         expect(schema).toHaveProperty("value1");
+    });
+
+    it("should handle literal segments", function () {
+        const template = `\
+{{[foo.0]}}
+`;
+        const schema = extractSchema(template);
+
+        expect(schema).toHaveProperty(["foo.0"]);
     });
 });
